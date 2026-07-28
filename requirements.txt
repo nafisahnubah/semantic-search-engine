@@ -1,0 +1,10 @@
+sentence-transformers
+annoy
+transformers
+torch
+torchvision
+matplotlib
+pillow
+pandas
+numpy
+kaggle
