@@ -13,14 +13,17 @@ Expected path: `data/food_recipes.csv`
 
 ## 2. Flickr8k (for text-to-image search)
 
-The notebook downloads this automatically via the Kaggle API:
+The notebook downloads this automatically via the Kaggle API
+([adityajn105/flickr8k](https://www.kaggle.com/datasets/adityajn105/flickr8k)). You need
+a Kaggle API token, `kaggle.json`, generated from
+<https://www.kaggle.com/settings> → API → Create New Token.
 
-```bash
-pip install kaggle
-# place your kaggle.json API token at ~/.kaggle/kaggle.json
-# (generate one from https://www.kaggle.com/settings -> API -> Create New Token)
-```
+The notebook's setup cell copies `kaggle.json` from the `notebooks/` folder into
+`~/.kaggle/`, so either:
 
-The relevant setup/download cells are already in `notebooks/semantic_search.ipynb` — just
-make sure your Kaggle credentials are in place before running them. This will populate
-`data/flickr8k/`.
+- put `kaggle.json` in `notebooks/` before running (it is git-ignored), or
+- put it at `~/.kaggle/kaggle.json` yourself and skip that cell.
+
+The download cell then saves `flickr8k.zip` here and extracts it to `data/flickr8k/`.
+The text-to-image section uses the first 200 images (sorted by filename) from
+`data/flickr8k/Images/`.
